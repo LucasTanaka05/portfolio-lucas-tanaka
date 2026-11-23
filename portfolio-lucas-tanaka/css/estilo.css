@@ -1,0 +1,114 @@
+/* Estilo simples para as três páginas */
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: rgb(4, 35, 15);
+  background: #f5f7fb;
+}
+
+.container {
+  width: 90%;
+  max-width: 960px;
+  margin: auto;
+}
+
+.cabecalho {
+  background: rgb(4, 35, 15);
+  color: white;
+  padding: 16px 0;
+}
+
+.cabecalho .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.logo { margin: 0; font-size: 22px; font-weight: bold; }
+nav { display: flex; gap: 18px; }
+nav a { color: white; text-decoration: none; }
+nav a:hover, nav a[aria-current="page"] { text-decoration: underline; }
+
+main { min-height: 65vh; padding: 40px 0; }
+h1 { color: rgb(4, 35, 15); font-size: 30px; line-height: 1.25; }
+h2 { color: rgb(4, 35, 15); font-size: 21px; }
+
+.apresentacao {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  animation: aparecer 0.7s ease;
+}
+
+.foto {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+.secao { margin-top: 32px; animation: aparecer 0.7s ease; }
+
+button, .links-contato a {
+  display: inline-block;
+  border: 0;
+  border-radius: 6px;
+  padding: 11px 16px;
+  background: rgb(4, 35, 15);
+  color: white;
+  font: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+button:hover, .links-contato a:hover { background: rgb(4, 35, 15); }
+#mensagem { color:rgb(4, 35, 15); font-weight: bold; }
+
+.habilidades { display: flex; flex-wrap: wrap; gap: 10px; }
+.habilidades span, .etiqueta {
+  display: inline-block;
+  padding: 5px 12px;
+  border-radius: 5px;
+  background: #b6cbb2;
+  color: rgb(4, 35, 15);
+}
+
+.projetos { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cartao {
+  background: white;
+  border: 1px solid #b6cbb2;
+  border-radius: 8px;
+  padding: 18px;
+  transition: transform 0.2s;
+}
+.cartao:hover { transform: translateY(-4px); }
+.cartao h2 { margin-top: 0; }
+
+.links-contato { display: flex; flex-wrap: wrap; gap: 12px; margin: 20px 0; }
+.aviso { font-size: 14px; color: #657181; }
+
+.rodape {
+  background: rgb(4, 35, 15);
+  color: white;
+  padding: 16px;
+  text-align: center;
+}
+.rodape p { margin: 0; }
+
+@keyframes aparecer {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 650px) {
+  .apresentacao { flex-direction: column; align-items: flex-start; }
+  .projetos { grid-template-columns: 1fr; }
+  h1 { font-size: 26px; }
+}
